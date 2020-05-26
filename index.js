@@ -11,12 +11,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = (input) => {
-  return tutorials.map( line => {
-    let tokens = line.split(' ')
-    let capitalizedTokens =
-      tokens.map( token => token.charAt(0).toUpperCase() + token.slice(1) )
-    let response = capitalizedTokens.join(' ')
-    return response
-  })
-}
+const robots = [
+  { name: 'Johnny 5', modes: 5, isActivated: false, },
+  { name: 'C3PO', modes: 3, isActivated: false, },
+  { name: 'Sonny', modes: 2.5, isActivated: false, },
+  { name: 'Baymax', modes: 1.5, isActivated: false, },
+];
+ 
+const activatedRobots = robots.map(function (robot) {
+  return Object.assign({}, robot, {
+    modes: robot.modes * 2,
+    isActivated: true,
+  });
+});
+ 
+console.log(activatedRobots);
